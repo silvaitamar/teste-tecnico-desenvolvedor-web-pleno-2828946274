@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Alpina_Teste_Dev
+ * @package Tema_Teste_Dev
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

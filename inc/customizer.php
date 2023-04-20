@@ -1,8 +1,8 @@
 <?php
 /**
- * Alpina Teste Dev Theme Customizer
+ * Tema Teste Dev Theme Customizer
  *
- * @package Alpina_Teste_Dev
+ * @package Tema_Teste_Dev
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function alpina_teste_dev_customize_register( $wp_customize ) {
+function tema_teste_dev_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -20,26 +20,26 @@ function alpina_teste_dev_customize_register( $wp_customize ) {
 			'blogname',
 			array(
 				'selector'        => '.site-title a',
-				'render_callback' => 'alpina_teste_dev_customize_partial_blogname',
+				'render_callback' => 'tema_teste_dev_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
 				'selector'        => '.site-description',
-				'render_callback' => 'alpina_teste_dev_customize_partial_blogdescription',
+				'render_callback' => 'tema_teste_dev_customize_partial_blogdescription',
 			)
 		);
 	}
 }
-add_action( 'customize_register', 'alpina_teste_dev_customize_register' );
+add_action( 'customize_register', 'tema_teste_dev_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function alpina_teste_dev_customize_partial_blogname() {
+function tema_teste_dev_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -48,14 +48,14 @@ function alpina_teste_dev_customize_partial_blogname() {
  *
  * @return void
  */
-function alpina_teste_dev_customize_partial_blogdescription() {
+function tema_teste_dev_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function alpina_teste_dev_customize_preview_js() {
-	wp_enqueue_script( 'alpina-teste-dev-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
+function tema_teste_dev_customize_preview_js() {
+	wp_enqueue_script( 'tema-teste-dev-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
 }
-add_action( 'customize_preview_init', 'alpina_teste_dev_customize_preview_js' );
+add_action( 'customize_preview_init', 'tema_teste_dev_customize_preview_js' );

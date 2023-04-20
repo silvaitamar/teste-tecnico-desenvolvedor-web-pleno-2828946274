@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Alpina_Teste_Dev
+ * @package Tema_Teste_Dev
  */
 
 get_header();

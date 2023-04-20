@@ -41,7 +41,7 @@
     "compile:rtl": "rtlcss dist/css/style.css dist/css/style-rtl.css",
     "lint:scss": "stylelint 'assets/scss/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'assets/js/*.js'",
-    "bundle": "dir-archiver --src . --dest ../alpina-teste-dev.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist yarn.lock && rm -rf dist/",
+    "bundle": "dir-archiver --src . --dest ../tema-teste-dev.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist yarn.lock && rm -rf dist/",
     "build": "npm-run-all compile:css compile:rtl lint:scss lint:js bundle"
   }
 }

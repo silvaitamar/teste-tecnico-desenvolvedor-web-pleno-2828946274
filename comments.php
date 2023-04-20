@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Alpina_Teste_Dev
+ * @package Tema_Teste_Dev
  */
 
 /*
@@ -28,18 +28,18 @@ if ( post_password_required() ) {
 		?>
 		<h2 class="comments-title">
 			<?php
-			$alpina_teste_dev_comment_count = get_comments_number();
-			if ( '1' === $alpina_teste_dev_comment_count ) {
+			$tema_teste_dev_comment_count = get_comments_number();
+			if ( '1' === $tema_teste_dev_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'alpina-teste-dev' ),
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'tema-teste-dev' ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
 				printf( 
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $alpina_teste_dev_comment_count, 'comments title', 'alpina-teste-dev' ) ),
-					number_format_i18n( $alpina_teste_dev_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $tema_teste_dev_comment_count, 'comments title', 'tema-teste-dev' ) ),
+					number_format_i18n( $tema_teste_dev_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			}
@@ -65,7 +65,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'alpina-teste-dev' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'tema-teste-dev' ); ?></p>
 			<?php
 		endif;
 

@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package Alpina_Teste_Dev
+ * @package Tema_Teste_Dev
  */
 
 /**
@@ -11,7 +11,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function alpina_teste_dev_body_classes( $classes ) {
+function tema_teste_dev_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -24,14 +24,14 @@ function alpina_teste_dev_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'alpina_teste_dev_body_classes' );
+add_filter( 'body_class', 'tema_teste_dev_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function alpina_teste_dev_pingback_header() {
+function tema_teste_dev_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
-add_action( 'wp_head', 'alpina_teste_dev_pingback_header' );
+add_action( 'wp_head', 'tema_teste_dev_pingback_header' );

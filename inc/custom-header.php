@@ -8,39 +8,39 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Alpina_Teste_Dev
+ * @package Tema_Teste_Dev
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses alpina_teste_dev_header_style()
+ * @uses tema_teste_dev_header_style()
  */
-function alpina_teste_dev_custom_header_setup() {
+function tema_teste_dev_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'alpina_teste_dev_custom_header_args',
+			'tema_teste_dev_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'alpina_teste_dev_header_style',
+				'wp-head-callback'   => 'tema_teste_dev_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', 'alpina_teste_dev_custom_header_setup' );
+add_action( 'after_setup_theme', 'tema_teste_dev_custom_header_setup' );
 
-if ( ! function_exists( 'alpina_teste_dev_header_style' ) ) :
+if ( ! function_exists( 'tema_teste_dev_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see alpina_teste_dev_custom_header_setup().
+	 * @see tema_teste_dev_custom_header_setup().
 	 */
-	function alpina_teste_dev_header_style() {
+	function tema_teste_dev_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

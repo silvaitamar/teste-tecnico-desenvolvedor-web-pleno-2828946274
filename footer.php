@@ -6,23 +6,23 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Alpina_Teste_Dev
+ * @package Tema_Teste_Dev
  */
 
 ?>
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'alpina-teste-dev' ) ); ?>">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'tema-teste-dev' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'alpina-teste-dev' ), 'WordPress' );
+				printf( esc_html__( 'Proudly powered by %s', 'tema-teste-dev' ), 'WordPress' );
 				?>
 			</a>
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'alpina-teste-dev' ), 'alpina-teste-dev', '<a href="https://www.linkedin.com/in/silvaitamar/">Itamar Silva</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'tema-teste-dev' ), 'tema-teste-dev', '<a href="https://www.linkedin.com/in/silvaitamar/">Itamar Silva</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
