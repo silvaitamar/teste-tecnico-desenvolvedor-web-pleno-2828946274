@@ -25,9 +25,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Generic
-	- Normalize
-	- Box sizing
 # Base
 	- Typography
 	- Elements
@@ -52,18 +49,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 // Import variables and mixins.
 @import "abstracts/abstracts";
-
-/*--------------------------------------------------------------
-# Generic
---------------------------------------------------------------*/
-
-/* Normalize
---------------------------------------------- */
-@import "generic/normalize";
-
-/* Box sizing
---------------------------------------------- */
-@import "generic/box-sizing";
 
 /*--------------------------------------------------------------
 # Base
@@ -100,8 +85,3 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Alignments
 --------------------------------------------- */
 @import "utilities/alignments";
-
-/*--------------------------------------------------------------
-# Utilities
---------------------------------------------------------------*/
-@import "bootstrap/bootstrap";
