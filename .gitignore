@@ -18,6 +18,7 @@ yarn.lock
 # Compiled files
 *.min.css
 *.min.js
+!bootstrap.min.js
 
 # Logs and databases
 *.log
@@ -37,7 +38,7 @@ style.css.map
 
 # Custom
 /assets/*
-!/assets/sass
+!/assets/scss
 !/assets/js
 !/assets/images
 !/assets/fonts
