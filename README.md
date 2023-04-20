@@ -1,70 +1,33 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+# Teste técnico Desenvolvedor Web Pleno
 
-_s
-===
+Este é o repositório do meu tema WordPress criado para o teste prático da vaga de desenvolvedor web pleno. O tema é baseado no starter theme Underscores e inclui suporte a Sass, tarefas NPM e Composer.
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+## Requisitos
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+- WordPress 5.8 ou superior
+- PHP 7.3 ou superior
+- Node.js 14.16 ou superior
+- npm 6.14 ou superior
+- Composer
 
-* A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A custom header implementation in `inc/custom-header.php`. Just add the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/template-functions.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample layouts in `sass/layouts/` made using CSS Grid for a sidebar on either side of your content. Just uncomment the layout of your choice in `sass/style.scss`.
-Note: `.no-sidebar` styles are automatically loaded.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Full support for `WooCommerce plugin` integration with hooks in `inc/woocommerce.php`, styling override woocommerce.css with product gallery features (zoom, swipe, lightbox) enabled.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+## Instalação
 
-Installation
----------------
+Para instalar o tema, você precisa ter o WordPress instalado e seguir os seguintes passos:
 
-### Requirements
+1. Baixe o repositório ou clone o mesmo usando o Git em seu ambiente local.
+2. Copie a pasta do tema para o diretório wp-content/themes do seu site WordPress.
+3. Ative o tema na seção de Aparência do painel administrativo do WordPress.
 
-`_s` requires the following dependencies:
+## Como usar
 
-- [Node.js](https://nodejs.org/)
-- [Composer](https://getcomposer.org/)
+Este tema foi criado para ser usado como base para novos projetos de tema WordPress. Ele inclui uma estrutura básica com os arquivos necessários, como header.php, footer.php, functions.php e style.css.
 
-### Quick Start
+O Sass é usado para gerenciar os estilos do tema. O arquivo principal de estilos é o style.scss na pasta assets/scss. Para compilar os estilos, execute o comando `npm run compile:sass` na raiz do tema.
 
-Clone or download this repository, change its name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a six-step find and replace on the name in all the templates.
+Também é possível usar bibliotecas PHP adicionais via Composer. O arquivo composer.json está incluído na raiz do tema. 
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain and replace with: `'megatherium-is-awesome'`.
-2. Search for `_s_` to capture all the functions names and replace with: `megatherium_is_awesome_`.
-3. Search for `Text Domain: _s` in `style.css` and replace with: `Text Domain: megatherium-is-awesome`.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks and replace with: <code>&nbsp;Megatherium_is_Awesome</code>.
-5. Search for `_s-` to capture prefixed handles and replace with: `megatherium-is-awesome-`.
-6. Search for `_S_` (in uppercase) to capture constants and replace with: `MEGATHERIUM_IS_AWESOME_`.
+## Desenvolvimento
 
-Then, update the stylesheet header in `style.css`, the links in `footer.php` with your own information and rename `_s.pot` from `languages` folder to use the theme's slug. Next, update or delete this readme.
+## Licença
 
-### Setup
-
-To start using all the tools that come with `_s`  you need to install the necessary Node.js and Composer dependencies :
-
-```sh
-$ composer install
-$ npm install
-```
-
-### Available CLI commands
-
-`_s` comes packed with CLI commands tailored for WordPress theme development :
-
-- `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
-- `composer lint:php` : checks all PHP files for syntax errors.
-- `composer make-pot` : generates a .pot file in the `languages/` directory.
-- `npm run compile:css` : compiles SASS files to css.
-- `npm run compile:rtl` : generates an RTL stylesheet.
-- `npm run watch` : watches all SASS files and recompiles them to css when they change.
-- `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
-- `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
-- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
-
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
-
-Good luck!
+Este projeto está licenciado sob a Licença Pública Geral GNU v2 ou posterior - veja o arquivo [LICENSE.md](LICENSE.md) para mais detalhes.
