@@ -1,0 +1,48 @@
+# Node.js
+/node_modules
+npm-debug.log
+yarn-error.log
+yarn.lock
+
+# Composer
+/vendor
+
+# Sass
+/dist
+
+# IDE/Editor
+.vscode
+.idea
+.DS_Store
+
+# Compiled files
+*.min.css
+*.min.js
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+*.sqlitedb
+*.db
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Underscores
+.sass-cache/
+style.css.map
+.svn
+
+# Custom
+/assets/*
+!/assets/sass
+!/assets/js
+!/assets/images
+!/assets/fonts
+!/assets/templates
+!/assets/vendor
+
+# Miscellaneous
+*.swp
