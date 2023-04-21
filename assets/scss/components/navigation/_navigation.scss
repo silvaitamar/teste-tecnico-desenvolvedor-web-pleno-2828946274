@@ -1,7 +1,4 @@
 .main-navigation {
-	display: block;
-	width: 100%;
-
 	ul {
 		display: none;
 		list-style: none;
@@ -54,12 +51,15 @@
 
 		&:hover > a,
 		&.focus > a {
+			color: $color__brand-white;
 		}
 	}
 
 	a {
 		display: block;
 		text-decoration: none;
+		padding: 30px 24px;
+		color: $color__brand-light-grey;
 	}
 
 	.current_page_item > a,

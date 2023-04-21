@@ -1,0 +1,8 @@
+.site-header{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(250px);
+    .site-header-inner{
+        max-width: 1536px;
+    }
+}
