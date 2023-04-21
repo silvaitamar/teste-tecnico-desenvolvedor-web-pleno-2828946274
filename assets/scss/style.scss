@@ -47,13 +47,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+// Import variables and mixins.
+@import "abstracts/abstracts";
+
 /*--------------------------------------------------------------
 # Bootstrap
 --------------------------------------------------------------*/
 @import "bootstrap/bootstrap";
 
-// Import variables and mixins.
-@import "abstracts/abstracts";
 
 /*--------------------------------------------------------------
 # Base
