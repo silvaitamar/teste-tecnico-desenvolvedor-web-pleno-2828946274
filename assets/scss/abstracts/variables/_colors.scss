@@ -1,3 +1,4 @@
+// Default colors
 $color__brand-black: #000000;
 $color__brand-white: #FFFFFF;
 $color__brand-dark-grey: #191919;
@@ -23,3 +24,7 @@ $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
+// Override Bootstrap colors
+$primary: $color__brand-white;
+$body-bg: $color__brand-black;
