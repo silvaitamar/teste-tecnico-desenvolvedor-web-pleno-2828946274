@@ -25,7 +25,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'tema-teste-dev' ); ?></a>
 
-	<header id="masthead" class="site-header mb-4 border-bottom">
+	<header id="masthead" class="site-header">
 		<div class="site-header-inner container-fluid d-flex flex-wrap align-items-center justify-content-center justify-content-md-between">
 			<div class="site-branding col-md-3 mb-2 mb-md-0">
 				<?php
@@ -53,7 +53,7 @@
 					array(
 						'theme_location' => 'menu-1',
 						'menu_class'	 => 'nav',
-						'menu_id'        => 'primary-menu',
+						'menu_id'        => 'primary-menu'
 					)
 				);
 				?>

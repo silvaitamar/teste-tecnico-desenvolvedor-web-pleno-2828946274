@@ -35,3 +35,46 @@ function tema_teste_dev_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'tema_teste_dev_pingback_header' );
+
+/**
+ * Add a dropdown toggle icon to nav menu items that have submenus.
+ *
+ * @param string $item_output The HTML output for the menu item.
+ * @param object $item The menu item object.
+ * @param int $depth The depth of the current menu item.
+ * @param array $args The menu arguments.
+ * @return string The modified HTML output for the menu item.
+ */
+function add_dropdown_toggle_icon_to_nav_menu( $item_output, $item, $depth, $args ) {
+	// Check if the nav menu item has children.
+	if ( in_array( 'menu-item-has-children', $item->classes ) ) {
+		// Add the `dropdown-toggle` class and `data-bs-toggle="dropdown"` attribute to the `a` element of the nav menu item.
+		$item_output = preg_replace('/<a /', '<a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" role="button" ', $item_output);
+	}
+	return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'add_dropdown_toggle_icon_to_nav_menu', 10, 4 );
+
+/**
+ * Displays custom icon  and description on main menu items.
+ *
+ * @param array  $items Menu items.
+ * @param object $args  Menu arguments.
+ *
+ * @return array Modified menu items.
+ */
+function custom_wp_nav_menu_objects( $items, $args ) {
+    foreach( $items as &$item ) {
+        $icon_url = get_field( 'menu-item-icon', $item );
+		$description = get_field( 'menu-item-description', $item );
+
+        if( $icon_url && $description ) {
+            $item->title = '<span class="menu-item-icon"><img src="' . $icon_url . '" alt="' . $item->title . '"></span> ' . $item->title . '<span class="menu-item-description">' . $description . '</span>';
+        }
+    }
+
+    return $items;
+}
+add_filter( 'wp_nav_menu_objects', 'custom_wp_nav_menu_objects', 10, 2 );
+  
+  
