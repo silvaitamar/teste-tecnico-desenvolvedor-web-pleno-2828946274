@@ -49,7 +49,8 @@ function tema_teste_dev_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'tema-teste-dev' ),
+			'primary' => esc_html__( 'Primary', 'tema-teste-dev' ),
+			'language' => esc_html__( 'Language', 'tema-teste-dev' ),
 		)
 	);
 
