@@ -27,7 +27,7 @@
 
 					<div class="col-md-6">
 						<div class="footer-social-networks">
-							<ul class="list-unstyled d-flex flex-wrap align-items-center justify-content-center m-0">
+							<ul class="list-unstyled d-flex flex-wrap align-items-center justify-content-between m-0">
 								<?php if ( get_theme_mod( 'tema_teste_dev_instagram_link' ) ) : ?>
 									<li>
 										<a class="link-body-emphasis" href="<?php echo esc_url( get_theme_mod( 'tema_teste_dev_instagram_link' ) ); ?>">
