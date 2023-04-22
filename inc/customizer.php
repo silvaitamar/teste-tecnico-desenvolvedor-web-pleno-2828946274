@@ -87,6 +87,17 @@ function tema_teste_dev_customize_register( $wp_customize ) {
 		'settings' => 'tema_teste_dev_youtube_link',
 		'type'     => 'text',
 	) );
+	
+	// Add a setting for the additional logo
+    $wp_customize->add_setting( 'tema_teste_dev_additional_logo' );
+
+    // Add a control to upload the additional logo
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'tema_teste_dev_additional_logo', array(
+        'label'    => __( 'Logo adicional', 'mytheme' ),
+        'section'  => 'title_tagline',
+        'settings' => 'tema_teste_dev_additional_logo',
+        'priority' => 8,
+    ) ) );
 
 	// Add a setting for the second footer logo
     $wp_customize->add_setting( 'tema_teste_dev_footer_logo' );
@@ -96,7 +107,7 @@ function tema_teste_dev_customize_register( $wp_customize ) {
         'label'    => __( 'Logo rodapé', 'mytheme' ),
         'section'  => 'title_tagline',
         'settings' => 'tema_teste_dev_footer_logo',
-        'priority' => 8,
+        'priority' => 9,
     ) ) );
 
 }
