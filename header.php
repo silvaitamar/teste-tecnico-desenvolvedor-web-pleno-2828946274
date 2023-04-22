@@ -25,9 +25,9 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'tema-teste-dev' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-header-inner container-fluid d-flex flex-wrap align-items-center justify-content-center justify-content-md-between">
-			<div class="site-branding col-md-3 mb-2 mb-md-0">
+	<header id="masthead" class="site-header navbar navbar-expand-lg fixed-top py-3 py-md-0">
+		<div class="site-header-inner container-fluid d-flex flex-wrap align-items-center justify-content-md-center">
+			<div class="site-branding col-md-2 mb-2 mb-md-0">
 				<?php
 				the_custom_logo();
 				if ( is_front_page() && is_home() ) :
@@ -46,21 +46,39 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'tema-teste-dev' ); ?></button>
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_class'	 => 'nav',
-						'menu_id'        => 'primary-menu'
-					)
-				);
-				?>
-			</nav><!-- #site-navigation -->
+			<button class="navbar-toggler text-white p-0 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarSideCollapse" aria-controls="navbarSideCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-			<div class="col-md-3 text-end">
-				<button type="button" class="btn btn-outline-primary me-2">Login</button>
+			<div class="navbar-collapse offcanvas-sm offcanvas-end d-flex flex-wrap align-items-center justify-content-end col-10 col-md-auto mb-2 mb-md-0" id="navbarSideCollapse" aria-labelledby="navbarSideCollapseLabel">
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+				<nav id="site-navigation" class="main-navigation nav-subitems-icons mx-auto">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'primary',
+							'menu_class'	 => 'navbar-nav',
+							'menu_id'        => 'primary-menu'
+						)
+					);
+					?>
+				</nav><!-- #site-navigation -->
+
+				<div class="d-flex flex-wrap align-items-center justify-content-center text-end">
+					<div id="site-language-navigation" class="main-navigation col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'language',
+								'menu_class'	 => 'nav',
+								'menu_id'        => 'language-menu'
+							)
+						);
+						?>
+					</div><!-- #site-language-navigation -->
+					<button type="button" class="btn btn-outline-primary me-2">Solicitar proposta</button>
+				</div>
 			</div>
 		</div>
 	</header><!-- #masthead -->

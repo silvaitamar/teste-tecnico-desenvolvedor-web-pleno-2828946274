@@ -1,9 +1,9 @@
 .main-navigation {
 	ul {
-		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		letter-spacing: -0.02em;
 
 		ul {
 			flex-flow: column;
@@ -39,8 +39,10 @@
 			}
 
 			a {
-				width: 200px;
 				color: $color__brand-white;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				position: relative;
 			}
 
 			:hover > a,
@@ -51,10 +53,13 @@
 
 			a:hover,
 			a.focus {
+				.menu-icon-outward{
+					display: none;
+				}
 			}
 
 			.menu-item-icon{
-				margin-right: 5px;
+				margin-right: 8px;
 				svg{
 					path{
 						fill: $color__brand-white;
@@ -64,6 +69,14 @@
 
 			.menu-item-description{
 				display: inline-block;
+				font-size: 0.8rem;
+				margin-top: 8px;
+			}
+
+			.menu-icon-outward{
+				position: absolute;
+				top: 18px;
+				right: 30px;
 			}
 		}
 
@@ -88,29 +101,58 @@
 		text-decoration: none;
 		padding: 30px 24px;
 		color: $color__brand-light-grey;
+		position: relative;
+	}
+
+	.navbar-nav{
+		> li{
+			&::after{
+				content: "";
+				display: block;
+				width: calc(100% - 40px);
+				height: 3px;
+				position: absolute;
+				bottom: 0;
+				left: 20px;
+				background-color: transparent;
+			}
+
+			&:hover{
+				&::after{
+					background-color: $color__brand-white;
+				}
+			}
+		}
+
+		.current_page_item,
+		.current-menu-item,
+		.current_page_ancestor,
+		.current-menu-ancestor {
+			&::after{
+				background-color: $color__brand-white;
+			}
+
+			> a{
+				color: $color__brand-white;
+			}
+		}
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		color: $color__brand-white;
 	}
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
-		display: flex;
+.main-navigation.nav-subitems-icons{
+	ul{
+		ul{
+			a{
+				width: 230px;
+			}
+		}
 	}
 }
 
@@ -151,10 +193,16 @@
 		-ms-transform: rotate(45deg);
 	}
 
-	&:hover{
+	&:hover,
+	&:focus,
+	&:active{
 		&::after{
 			border-color: $color__brand-white;
 		}
 	}
+}
+
+.navbar-toggler .navbar-toggler-icon {
+	filter: brightness(0) invert(1);
 }
   
