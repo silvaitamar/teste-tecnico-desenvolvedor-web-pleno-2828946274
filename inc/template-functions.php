@@ -64,15 +64,25 @@ add_filter( 'walker_nav_menu_start_el', 'add_dropdown_toggle_icon_to_nav_menu', 
  * @return array Modified menu items.
  */
 function custom_wp_nav_menu_objects( $items, $args ) {
-    foreach( $items as &$item ) {
-        $icon_url = get_field( 'menu-item-icon', $item );
-		$description = get_field( 'menu-item-description', $item );
+	if ( $args->theme_location == 'primary' ) {
+		foreach( $items as &$item ) {
+			$item_title = $item->title;
+			$icon_url = get_field( 'menu-item-icon', $item );
+			$description = get_field( 'menu-item-description', $item );
 
-        if( $icon_url && $description ) {
-            $item->title = '<span class="menu-item-icon"><img src="' . $icon_url . '" alt="' . $item->title . '"></span> ' . $item->title . '<span class="menu-item-description">' . $description . '</span>';
-        }
-    }
+			if( $icon_url && $description ) {
+				$item_title = '<span class="menu-item-icon"><img src="' . $icon_url . '" alt="' . $item->title . '"></span> ' . $item->title . '<span class="menu-item-description">' . $description . '</span>';
 
+			}
+
+			if ( $item->menu_item_parent && $depth == 0 ) {
+				// Add the SVG icon after the nav menu item text.
+				$item_title .= '<svg class="menu-icon-outward icon-arrow-outward" width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3.5V4.5H11.295L3 12.795L3.705 13.5L12 5.205V11.5H13V3.5H5Z" fill="white"/></svg>';
+			}
+
+			$item->title = $item_title;
+		}
+	}
     return $items;
 }
 add_filter( 'wp_nav_menu_objects', 'custom_wp_nav_menu_objects', 10, 2 );
