@@ -8,6 +8,14 @@
     }
 }
 
+.header-social-networks{
+    [class^="icon-"], [class*=" icon-"] {
+        &::before{
+            color: $color__brand-black;
+        }
+    }
+}
+
 @include media-breakpoint-up(md) {
     .site-header {
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
