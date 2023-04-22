@@ -45,39 +45,93 @@
 					<p class="site-description"><?php echo $tema_teste_dev_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
+					
+			<div class="navbar navbar-expand-lg" aria-label="Offcanvas navbar large">
+				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainOffcanvas" aria-controls="mainOffcanvas" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-			<button class="navbar-toggler text-white p-0 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarSideCollapse" aria-controls="navbarSideCollapse">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+				<div class="offcanvas offcanvas-end" tabindex="-1" id="mainOffcanvas" aria-labelledby="mainOffcanvasLabel">
+					<div class="offcanvas-header">
+						<?php if ( get_theme_mod( 'tema_teste_dev_additional_logo' ) ) : ?>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								<img src="<?php echo esc_url( get_theme_mod( 'tema_teste_dev_additional_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+							</a>
+						<?php endif; ?>
 
-			<div class="navbar-collapse offcanvas-sm offcanvas-end d-flex flex-wrap align-items-center justify-content-end col-10 col-md-auto mb-2 mb-md-0" id="navbarSideCollapse" aria-labelledby="navbarSideCollapseLabel">
-				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body">
+						<nav id="site-navigation" class="main-navigation nav-subitems-icons">
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'primary',
+									'menu_class'	 => 'navbar-nav',
+									'menu_id'        => 'primary-menu',
+									'fallback_cb' => '__return_false',
+									'depth' => 2,
+									'walker' => new bootstrap_5_wp_nav_menu_walker()
+								)
+							);
+							?>
+						</nav><!-- #site-navigation -->
 
-				<nav id="site-navigation" class="main-navigation nav-subitems-icons mx-auto">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'primary',
-							'menu_class'	 => 'navbar-nav',
-							'menu_id'        => 'primary-menu'
-						)
-					);
-					?>
-				</nav><!-- #site-navigation -->
+						<div class="d-flex flex-wrap align-items-center justify-content-center text-end d-none d-lg-block">
+							<div id="site-language-navigation" class="main-navigation col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+								<?php
+								wp_nav_menu(
+									array(
+										'theme_location' => 'language',
+										'menu_class'	 => 'nav',
+										'menu_id'        => 'language-menu',
+										'fallback_cb' => '__return_false',
+										'depth' => 2,
+										'walker' => new bootstrap_5_wp_nav_menu_walker()
+									)
+								);
+								?>
+							</div><!-- #site-language-navigation -->
+							<button type="button" class="btn btn-outline-primary me-2">Solicitar proposta</button>
+						</div>
 
-				<div class="d-flex flex-wrap align-items-center justify-content-center text-end">
-					<div id="site-language-navigation" class="main-navigation col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'language',
-								'menu_class'	 => 'nav',
-								'menu_id'        => 'language-menu'
-							)
-						);
-						?>
-					</div><!-- #site-language-navigation -->
-					<button type="button" class="btn btn-outline-primary me-2">Solicitar proposta</button>
+						<div class="header-social-networks d-md-block d-lg-none">
+							<ul class="list-unstyled d-flex flex-wrap align-items-center justify-content-between m-0">
+								<?php if ( get_theme_mod( 'tema_teste_dev_instagram_link' ) ) : ?>
+									<li>
+										<a class="link-body-emphasis" href="<?php echo esc_url( get_theme_mod( 'tema_teste_dev_instagram_link' ) ); ?>">
+											<i class="icon-Property-1instagram"></i>
+										</a>
+									</li>
+								<?php endif; ?>
+
+								<?php if ( get_theme_mod( 'tema_teste_dev_linkedin_link' ) ) : ?>
+									<li>
+										<a class="link-body-emphasis" href="<?php echo esc_url( get_theme_mod( 'tema_teste_dev_linkedin_link' ) ); ?>">
+											<i class="icon-Property-1linkedin"></i>
+										</a>
+									</li>
+								<?php endif; ?>
+
+								<?php if ( get_theme_mod( 'tema_teste_dev_whatsapp_link' ) ) : ?>
+									<li>
+										<a class="link-body-emphasis" href="<?php echo esc_url( get_theme_mod( 'tema_teste_dev_whatsapp_link' ) ); ?>">
+											<i class="icon-Property-1whatsapp"></i>
+										</a>
+									</li>
+								<?php endif; ?>
+
+								<?php if ( get_theme_mod( 'tema_teste_dev_youtube_link' ) ) : ?>
+									<li>
+										<a class="link-body-emphasis" href="<?php echo esc_url( get_theme_mod( 'tema_teste_dev_youtube_link' ) ); ?>">
+											<i class="icon-Property-1youtube"></i>
+										</a>
+									</li>
+								<?php endif; ?>
+							</ul>
+
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
