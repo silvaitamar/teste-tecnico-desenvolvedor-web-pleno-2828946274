@@ -86,5 +86,19 @@ function custom_wp_nav_menu_objects( $items, $args ) {
     return $items;
 }
 add_filter( 'wp_nav_menu_objects', 'custom_wp_nav_menu_objects', 10, 2 );
+
+/**
+ * Adds the "navbar-brand" class to the link tag of the custom logo.
+ *
+ * @param string $html The HTML output for the custom logo.
+ * @return string The updated HTML output with the "navbar-brand" class added.
+ */
+function custom_logo_class( $html ) {
+    // Replaces the "class" attribute of the custom logo link with "navbar-brand custom-logo-link".
+    $html = str_replace( 'class="custom-logo-link', 'class="navbar-brand custom-logo-link', $html );
+    
+    return $html;
+}
+add_filter( 'get_custom_logo', 'custom_logo_class' );
   
   
