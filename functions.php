@@ -137,7 +137,10 @@ add_action( 'widgets_init', 'tema_teste_dev_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function tema_teste_dev_scripts() {
+function tema_teste_dev_scripts() { 
+    // Enqueue the Google Fonts source file
+    wp_enqueue_style( 'tema-teste-dev-google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap', array(), null );
+
 	wp_enqueue_style( 'tema-teste-dev-style', get_template_directory_uri() . '/dist/css/style.css', array(), _S_VERSION );
 	wp_style_add_data( 'tema-teste-dev-style', 'rtl', 'replace' );
 
