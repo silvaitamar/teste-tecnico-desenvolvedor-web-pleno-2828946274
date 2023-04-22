@@ -217,3 +217,8 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+/**
+ * Bootstrap 5 Nav Walker.
+ */
+require get_template_directory() . '/inc/bootstrap_5_wp_nav_menu_walker.php';
+
