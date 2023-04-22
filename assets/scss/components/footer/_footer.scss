@@ -1,0 +1,11 @@
+.site-footer{
+    background-color: $color__brand-dark-grey;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: $color__brand-light-grey;
+    font-size: 0.8rem;
+
+    .nav-link{
+        color: $color__brand-light-grey;        
+    }
+}
