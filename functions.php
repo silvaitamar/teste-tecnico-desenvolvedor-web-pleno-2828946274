@@ -172,6 +172,16 @@ function tema_teste_dev_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Widget 5', 'tema-teste-dev' ),
+		'id'            => 'footer-5',
+		'description'   => esc_html__( 'Widget area for footer 5', 'tema-teste-dev' ),
+		'before_widget' => '<div class="widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
 }
 add_action( 'widgets_init', 'tema_teste_dev_widgets_init' );
 

@@ -18,9 +18,9 @@ address {
 }
 
 pre {
-	background: $color__background-pre;
-	font-family: $font__pre;
-	line-height: $font__line-height-pre;
+	background: $color__brand-white;
+	font-family: $font-family-base;
+	line-height: $line-height-base;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
@@ -31,18 +31,18 @@ code,
 kbd,
 tt,
 var {
-	font-family: $font__code;
+	font-family:  $font-family-base;
 }
 
 abbr,
 acronym {
-	border-bottom: 1px dotted $color__border-abbr;
+	border-bottom: 1px dotted $color__brand-white;
 	cursor: help;
 }
 
 mark,
 ins {
-	background: $color__background-ins;
+	background: $color__brand-white;
 	text-decoration: none;
 }
 

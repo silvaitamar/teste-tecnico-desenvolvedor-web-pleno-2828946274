@@ -144,6 +144,7 @@
 
 @include media-breakpoint-up(lg) {
 	.main-navigation {
+		margin: 0;
 		ul{
 			ul{
 				flex-flow: column;
@@ -154,16 +155,15 @@
 				left: -999em;
 				z-index: 99999;
 			}
-			li:hover > ul,
-			li.focus > ul {
-				left: 50%;
-				transform: translateX(-50%);
-			}
-		}
-		li {
-			&:hover > a,
-			&.focus > a {
-				color: $color__brand-white;
+
+			li {	
+				> ul, ul.dropdown-menu[data-bs-popper] {
+					margin-left: 0;
+					margin-right: 0;
+					margin-top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+				}
 			}
 		}
 
@@ -218,6 +218,10 @@
 			ul{
 				li{
 					background-color: $color__brand-dark-grey;
+					&:hover > a,
+					&.focus > a {
+						color: $color__brand-black;
+					}
 				}
 
 				a{

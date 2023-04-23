@@ -5,7 +5,67 @@
     color: $color__brand-light-grey;
     font-size: 0.8rem;
 
+    .site-footer-section{
+        border-bottom: 1px solid rgba($color__brand-white, .2);
+        margin-bottom: 30px;
+        &:last-of-type{
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+    }
+
     .nav-link{
         color: $color__brand-light-grey;        
+    }
+
+    .menu{
+        li{
+            margin-bottom: 1rem;
+        }
+    }
+
+    .widget{
+        [class^="icon-"], [class*=" icon-"] {
+            font-size: 1rem;
+            margin-right: .5rem;
+        }
+
+        a{
+            display: inline-flex;
+            align-items: center;
+        }
+
+        p{
+            margin-bottom: 1rem;
+        }
+    }
+
+    .widget-title{
+        color: $color__brand-white;
+        font-size: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-widget-4{
+        .widget-title{
+            margin-bottom: .5rem;
+        }
+    }
+
+    .form-control, .btn{
+        font-size: .8rem;
+    }
+
+    .btn{
+        width: 100%;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .site-footer, .widget-title{
+        font-size: 1rem;
+        .widget-title, .form-control, .btn{
+            font-size: 1rem;
+        }
     }
 }

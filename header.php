@@ -26,8 +26,8 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'tema-teste-dev' ); ?></a>
 
 	<header id="masthead" class="site-header navbar navbar-expand-lg fixed-top py-3 py-md-0">
-		<div class="site-header-inner container-fluid d-flex flex-wrap align-items-center justify-content-md-center">
-			<div class="site-branding col-md-2 mb-2 mb-md-0">
+		<div class="site-header-inner container-fluid d-flex flex-wrap align-items-center justify-content-md-between">
+			<div class="site-branding col-md-3 mb-2 mb-md-0">
 				<?php
 				the_custom_logo();
 				if ( is_front_page() && is_home() ) :
@@ -46,7 +46,7 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 					
-			<div class="navbar navbar-expand-lg" aria-label="Offcanvas navbar large">
+			<div class="col-md-9 d-flex flex-wrap align-items-center justify-content-md-end" aria-label="Offcanvas navbar large">
 				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainOffcanvas" aria-controls="mainOffcanvas" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -61,8 +61,8 @@
 
 						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 					</div>
-					<div class="offcanvas-body">
-						<nav id="site-navigation" class="main-navigation nav-subitems-icons">
+					<div class="offcanvas-body ">
+						<nav id="site-navigation" class="main-navigation nav-subitems-icons d-flex flex-wrap align-items-center justify-content-lg-center col-md-8">
 							<?php
 							wp_nav_menu(
 								array(
@@ -77,7 +77,7 @@
 							?>
 						</nav><!-- #site-navigation -->
 
-						<div class="d-flex flex-wrap align-items-center justify-content-center text-end d-none d-lg-block">
+						<div class="flex-wrap align-items-center justify-content-end text-end d-none d-lg-flex col-md-4">
 							<div id="site-language-navigation" class="main-navigation col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 								<?php
 								wp_nav_menu(

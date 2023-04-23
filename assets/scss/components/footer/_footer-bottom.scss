@@ -1,0 +1,13 @@
+.site-footer-bottom{
+    margin-top: 3rem;
+    .menu{
+        display: flex;
+        margin-top: 3rem;
+        li{
+            margin-right: 1.5rem;
+            &:last-of-type{
+                margin-right: 0;
+            }
+        }
+    }
+}
